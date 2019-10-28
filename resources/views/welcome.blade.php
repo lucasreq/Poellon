@@ -93,7 +93,7 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                    <a href="resources/views/test.html">This is a test</a>
+                    <a href="../resources/views/test.html">This is a test</a>
                 </div>
             </div>
         </div>
