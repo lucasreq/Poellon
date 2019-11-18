@@ -49506,8 +49506,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/lucas/Documents/TP/dev_web/homestead/poellon/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/lucas/Documents/TP/dev_web/homestead/poellon/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/lucas/Documents/TP/dev_web/homestead/Poellon/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/lucas/Documents/TP/dev_web/homestead/Poellon/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

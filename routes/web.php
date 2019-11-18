@@ -21,4 +21,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/* Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'welcomeController@index'); */
+Route::get('/test' , 'testController@index')->name('test');
+
+Route::get('profile', function () {
+    return view('profile.show');
+});
+
+Route::get('profile/create', function () {
+    return view('profile.create');
+});
+
+Route::get('profile/edit', function () {
+    return view('profile.edit');
+});
