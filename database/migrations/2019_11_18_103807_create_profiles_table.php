@@ -18,6 +18,7 @@ class CreateProfilesTable extends Migration
             $table->string('Pseudo');
             $table->enum('Genre', ['masculin', 'feminin', 'autre']);
             $table->mediumText('Description');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

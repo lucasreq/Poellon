@@ -25,6 +25,8 @@ Auth::routes();
 Route::get('/', 'welcomeController@index'); */
 Route::get('/test' , 'testController@index')->name('test');
 
+
+// profiles
 Route::get('profile', function () {
     return view('profile.show');
 });
@@ -36,3 +38,8 @@ Route::get('profile/create', function () {
 Route::get('profile/edit', function () {
     return view('profile.edit');
 });
+
+Route::post('profile/create', ['uses' => 'ProfileController@store', 'as' => 'profile.store']);
+
+
+//Recipes
