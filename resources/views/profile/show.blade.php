@@ -83,23 +83,23 @@
         </style>
     </head>
     <body style="background-image: url('https://swagatcatering.com/upload/2017/06/indian-food-background.jpg')">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/"><img src="https://zupimages.net/up/19/47/rhfx.png" alt="logo" width="100em" height="50em"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/"><img src="https://zupimages.net/up/19/47/rhfx.png" alt="logo" width="100em" height="50em"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Top recettes</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0" style="margin:auto">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-              <div class="flex-center position-ref full-height">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Top recettes</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" style="margin:auto">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <div class="flex-center position-ref full-height">
                     @if (Route::has('login'))
                         <div class="top-right links">
                             @auth
@@ -109,9 +109,9 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ url('/profile') }}">Profil</a>
                                     <a class="dropdown-item" href="#">Historique</a>
@@ -130,8 +130,8 @@
                         </div>
                     @endif
                 </div>
-            </div>
-          </nav>
+                </div>
+            </nav>
             <div class="content" style="margin :auto; width: 75em; margin-top: 2em; background-color:beige;text-align:center; padding:3em">
 
                 <div class="links">
