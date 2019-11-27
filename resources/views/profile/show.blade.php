@@ -113,7 +113,7 @@
                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ url('/home') }}">Profil</a>
+                                    <a class="dropdown-item" href="{{ url('/profile') }}">Profil</a>
                                     <a class="dropdown-item" href="#">Historique</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -138,11 +138,14 @@
                     <img class="circular--square" src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png" style="width: 10em">
                     <br/>
                     <b>Mon profil</b>
-                    <h2 style="color:chocolate">{{ Auth::user()->name }} </h2>
-                    <hr/>
                     @foreach ($profile as $profile)
-                        <p>{{ $profile->description }}</p>
-                        <b>{{ $profile->genre }}</b>
+                        <h2 style="color:chocolate">{{ $profile->Pseudo }} </h2>
+                    <hr/>
+                        <tr>
+                            <th>{{ $profile->id }}</th>
+                            <th>{{ $profile->Pseudo }}</th>
+                            <th>{{ $profile->Description }}</th>
+                        </tr>
                     @endforeach
 
                 </div>

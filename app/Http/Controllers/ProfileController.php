@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -14,7 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $profile = Profile::get();
+        $profile = DB::table('profiles')->get()->toArray();
         return view('profile.show', compact('profile'));
     }
 
