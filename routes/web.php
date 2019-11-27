@@ -27,9 +27,7 @@ Route::get('/test' , 'testController@index')->name('test');
 
 
 // profiles
-Route::get('profile', function () {
-    return view('profile.show');
-});
+Route::get('profile', 'ProfileController@index')->name('profile');
 
 Route::get('profile/create', function () {
     return view('profile.create');
@@ -39,7 +37,21 @@ Route::get('profile/edit', function () {
     return view('profile.edit');
 });
 
-Route::post('profile/create', ['uses' => 'ProfileController@store', 'as' => 'profile.store']);
+Route::post('profile/store', 'ProfileController@store')->name('profile.store');
 
 
-//Recipes
+
+//recettes
+
+Route::get('recette', function () {
+    return view('recettes.recette');
+});
+Route::get('recette/create', function () {
+    return view('recettes.create');
+});
+Route::get('recette/delete', function () {
+    return view('recettes.delete');
+});
+Route::get('recette/edit', function () {
+    return view('recettes.edit');
+});

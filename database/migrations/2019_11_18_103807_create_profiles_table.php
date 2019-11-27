@@ -15,7 +15,7 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('Pseudo');
+            $table->string('Pseudo')->unique();
             $table->enum('Genre', ['masculin', 'feminin', 'autre']);
             $table->mediumText('Description');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

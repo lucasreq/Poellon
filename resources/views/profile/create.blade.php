@@ -33,28 +33,29 @@
                     Creation de votre profil
                 <br/>
                 </div>
-                <form method="POST" action="{{ route('profile.store', $Profile->$id) }}">
+                <form method="POST" action="{{ route('profile.store') }}">
+                    @csrf
                     <div class="form-group">
-                        <label for="inputPseudo">Pseudo</label>
+                        <label for="pseudo">Pseudo</label>
                         <br/>
-                        <input type="text" class="form-control" id="inputPseudo" aria-describedby="Pseudo" placeholder="Pseudo">
+                        <input type="text" class="form-control" id="Pseudo" aria-describedby="pseudo" placeholder="pseudo" name="pseudo">
                     </div>
                     <div class="form-group">
                         <label for="chooseyourgender">Genre</label>
                         <br/>
-                        <select id="genre">
+                        <select id="Genre" name="genre">
                             <option value="masculin" selected>Masculin</option>
                             <option value="feminin">Feminin</option>
                             <option value="autre">Autre</option>
-                          </select>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="inputDescription">Description</label>
                         <br/>
-                        <input type="text" class="form-control" id="inputDescription" placeholder="Description">
+                        <input type="text" class="form-control" id="Description" placeholder="description" name="description">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                </form>
             </div>
         </div>
     </body>

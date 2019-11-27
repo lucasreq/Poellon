@@ -14,7 +14,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        $profile = Profile::get();
+        return view('profile.show', compact('profile'));
     }
 
     /**
@@ -40,10 +41,11 @@ class ProfileController extends Controller
         $profile->pseudo = $request->pseudo;
         $profile->genre = $request->genre;
         $profile->description = $request->description;
+        $profile->id;
 
         $profile->save();
 
-        return redirect()->route('profile.show', $profile->id);
+        return redirect('profile');
     }
 
     /**
@@ -90,4 +92,6 @@ class ProfileController extends Controller
     {
         //
     }
+
+
 }
