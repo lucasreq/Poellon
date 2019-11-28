@@ -138,15 +138,13 @@
                     <img class="circular--square" src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png" style="width: 10em">
                     <br/>
                     <b>Mon profil</b>
-                    @foreach ($profile as $profile)
                         <h2 style="color:chocolate">{{ $profile->Pseudo }} </h2>
                     <hr/>
                         <tr>
-                            <th>{{ $profile->id }}</th>
-                            <th>{{ $profile->Pseudo }}</th>
-                            <th>{{ $profile->Description }}</th>
+                            <th>{{ Auth::user()->'pseudo' }}</th>
+                            <th>{{ Auth::user()->'genre' }}</th>
+                            <th>{{ Auth::user()->'description' }}</th>
                         </tr>
-                    @endforeach
 
                 </div>
             </div>

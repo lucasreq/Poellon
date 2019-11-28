@@ -96,6 +96,23 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="chooseyourgender" class="col-md-4 col-form-label text-md-right">Genre</label>
+                                <br/>
+                                <select id="Genre" name="genre">
+                                    <option value="masculin" selected>Masculin</option>
+                                    <option value="feminin">Feminin</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="pseudo" class="col-md-4 col-form-label text-md-right">Pseudo</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control @error('pseudo') is-invalid @enderror" id="Pseudo" aria-describedby="pseudo" placeholder="pseudo" name="pseudo" autofocus>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                                 <div class="col-md-6">
@@ -129,6 +146,12 @@
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputDescription" style="text-align:center">Description</label>
+                                <br/>
+                                <input type="text" class="form-control" id="Description" placeholder="description" name="description">
                             </div>
 
                             <div class="form-group row mb-0">
