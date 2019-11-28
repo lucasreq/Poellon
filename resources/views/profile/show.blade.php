@@ -137,7 +137,7 @@
                 <div class="links">
                     <img class="circular--square" style="width:150px; height:150px" src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width: 10em">
                     <br/>
-                    <form enctype="multipart/form-data" action="#" method="POST">
+                    <form enctype="multipart/form-data" action="route('profile.update')" method="POST">
                         <label>Update Profile Image</label>
                         <input type="file" name="avatar">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

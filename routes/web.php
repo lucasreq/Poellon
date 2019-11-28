@@ -27,19 +27,10 @@ Route::get('/test' , 'testController@index')->name('test');
 
 
 // profiles
-Route::get('profile', 'ProfileController@index')->name('profile');
 
-Route::get('profile/create', function () {
-    return view('profile.create');
-});
+Route::get('profile', 'ProfileController@show')->middleware('auth')->name('profile.show');
 
-Route::get('profile/edit', function () {
-    return view('profile.edit');
-});
-
-Route::post('profile/store', 'ProfileController@store')->name('profile.store');
-
-
+Route::post('profile', 'ProfileController@update')->middleware('auth')->name('profile.update');
 
 //recettes
 
