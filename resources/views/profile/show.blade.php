@@ -135,15 +135,21 @@
             <div class="content" style="margin :auto; width: 75em; margin-top: 2em; background-color:beige;text-align:center; padding:3em">
 
                 <div class="links">
-                    <img class="circular--square" src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png" style="width: 10em">
+                    <img class="circular--square" style="width:150px; height:150px" src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width: 10em">
                     <br/>
+                    <form enctype="multipart/form-data" action="#" method="POST">
+                        <label>Update Profile Image</label>
+                        <input type="file" name="avatar">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="submit" class="pull-right btn btn-sm btn-primary">
+                    </form>
                     <b>Mon profil</b>
-                        <h2 style="color:chocolate">{{ $profile->Pseudo }} </h2>
+                        <h2 style="color:chocolate">{{ Auth::user()->pseudo }} </h2>
                     <hr/>
                         <tr>
-                            <th>{{ Auth::user()->'pseudo' }}</th>
-                            <th>{{ Auth::user()->'genre' }}</th>
-                            <th>{{ Auth::user()->'description' }}</th>
+                            <th>{{ Auth::user()->pseudo }}</th>
+                            <th>{{ Auth::user()->genre }}</th>
+                            <th>{{ Auth::user()->description }}</th>
                         </tr>
 
                 </div>
