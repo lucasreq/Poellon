@@ -144,8 +144,8 @@
                     <div class="form-group">
                         <label for="avatar">Image</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="avatar" name="avatar">
                             <label class="custom-file-label" for="avatar">Image</label>
+                            <input type="file" class="custom-file-input" id="avatar" name="avatar">
                         </div>
                     </div>
                     <div class="form-group">
