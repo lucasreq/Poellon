@@ -142,13 +142,6 @@
                     @csrf
 
                     <div class="form-group">
-                        <label for="avatar">Image</label>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="avatar">Image</label>
-                            <input type="file" class="custom-file-input" id="avatar" name="avatar">
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label for="pseudo">Pseudo</label>
                         <br/>
                         <input type="text" class="form-control" id="Pseudo" aria-describedby="pseudo" placeholder="pseudo" name="pseudo">
@@ -166,6 +159,12 @@
                         <label for="inputDescription">Description</label>
                         <br/>
                         <input type="text" class="form-control" id="Description" placeholder="description" name="description">
+                    </div>
+                    <div class="form-group">
+                        <label for="avatar">Image</label>
+                        <div class="col-md-6">
+                            <input id="avatar" type="file" class="form-control" name="avatar">
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

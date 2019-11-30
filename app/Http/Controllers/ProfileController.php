@@ -83,19 +83,29 @@ class ProfileController extends Controller
     public function update(Request $request){
         // Logic for user upload of avatar
         $user = Auth::user();
-        if($request->hasFile('avatar')){
-            $avatar = $request->file('avatar');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)->save( public_path('uploads/avatars/' . $filename ) );
-            $user->avatar = $filename;
-            $user->save();
-        }
+//
         $user->pseudo = $request->pseudo;
-
+//
         $user->genre = $request->genre;
-
+//
         $user->description = $request->description;
+//
 
+        if ($request->has('avatar')) {
+            // Get image file
+            $image = $request->file('avatar');
+            // Make a image name based on user name and current timestamp
+            $name = $request->input('pseudo').'_'.time();
+            // Define folder path
+            $folder = '/uploads/avatars/';
+            // Make a file path where image will be stored [ folder path + file name + file extension]
+            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
+            // Upload image
+            $this->uploadOne($image, $folder, 'public', $name);
+            // Set user profile image path in database to filePath
+            $user->avatar = $filePath;
+        }
+        
         $user->save();
 
         return view('profile.show', ['user' => Auth::user()] );
