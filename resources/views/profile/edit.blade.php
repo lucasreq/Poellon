@@ -141,10 +141,13 @@
                 <form method="POST" action="{{ route('profile.update') }}">
                     @csrf
 
-                    <label>Update Profile Image</label>
-                    <input type="file" name="avatar">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+                    <div class="form-group">
+                        <label for="avatar">Image</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="avatar" name="avatar">
+                            <label class="custom-file-label" for="avatar">Image</label>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="pseudo">Pseudo</label>
                         <br/>

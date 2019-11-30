@@ -151,7 +151,7 @@
                         <th><b> Description:</b></th>
                         <th><p>{{ Auth::user()->description }}</p></th>
                     </tr>
-                <a class="btn btn-primary" href="http://homestead.test/profile/edit" role="button">Changez vos infos</a>
+                    <a class="btn btn-primary" href="http://homestead.test/profile/edit" role="button">Changez vos infos</a>
 
                 </div>
             </div>

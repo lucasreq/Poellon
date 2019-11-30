@@ -82,16 +82,14 @@ class ProfileController extends Controller
      */
     public function update(Request $request){
         // Logic for user upload of avatar
+        $user = Auth::user();
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
-            $user = Auth::user();
+            Image::make($avatar)->resize(300, 300)->save( public_path('uploads/avatars/' . $filename ) );
             $user->avatar = $filename;
             $user->save();
         }
-        $user = Auth::user();
-
         $user->pseudo = $request->pseudo;
 
         $user->genre = $request->genre;
