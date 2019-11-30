@@ -137,20 +137,21 @@
                 <div class="links">
                     <img class="circular--square" style="width:150px; height:150px" src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width: 10em">
                     <br/>
-                    <form enctype="multipart/form-data" action="route('profile.update')" method="POST">
-                        <label>Update Profile Image</label>
-                        <input type="file" name="avatar">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="submit" class="pull-right btn btn-sm btn-primary">
-                    </form>
                     <b>Mon profil</b>
                         <h2 style="color:chocolate">{{ Auth::user()->pseudo }} </h2>
                     <hr/>
-                        <tr>
-                            <th>{{ Auth::user()->pseudo }}</th>
-                            <th>{{ Auth::user()->genre }}</th>
-                            <th>{{ Auth::user()->description }}</th>
-                        </tr>
+
+                    <h2>Informations :</h2>
+                    <br/>
+                    <tr>
+                        <th><b> Name:</b></th>
+                        <th><p>{{ Auth::user()->name }}</p></th>
+                        <th><b> Genre:</b></th>
+                        <th><p>{{ Auth::user()->genre }}</p></th>
+                        <th><b> Description:</b></th>
+                        <th><p>{{ Auth::user()->description }}</p></th>
+                    </tr>
+                <a class="btn btn-primary" href="http://homestead.test/profile/edit" role="button">Changez vos infos</a>
 
                 </div>
             </div>

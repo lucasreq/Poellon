@@ -90,8 +90,19 @@ class ProfileController extends Controller
             $user->avatar = $filename;
             $user->save();
         }
-        return view('profile', ['user' => Auth::user()] );
+        $user = Auth::user();
+
+        $user->pseudo = $request->pseudo;
+
+        $user->genre = $request->genre;
+
+        $user->description = $request->description;
+
+        $user->save();
+
+        return view('profile.show', ['user' => Auth::user()] );
     }
+
 
     /**
      * Remove the specified resource from storage.

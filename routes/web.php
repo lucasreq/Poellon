@@ -25,12 +25,16 @@ Auth::routes();
 Route::get('/', 'welcomeController@index'); */
 Route::get('/test' , 'testController@index')->name('test');
 
+Route::get('profile/edit', function (){
+    return view('profile.edit');
+});
+
 
 // profiles
 
 Route::get('profile', 'ProfileController@show')->middleware('auth')->name('profile.show');
 
-Route::post('profile', 'ProfileController@update')->middleware('auth')->name('profile.update');
+Route::post('profile.edit', 'ProfileController@update')->middleware('auth')->name('profile.update');
 
 //recettes
 
