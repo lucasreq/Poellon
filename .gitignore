@@ -1,13 +1,11 @@
 .vagrant
 .editorcongif
-.env
 .styleci.yml
 after.sh
 aliases
 artisan
 composer.json
 composer.lock
-Homestead.yaml
 package-lock.json
 package.json
 phpunit.xml
