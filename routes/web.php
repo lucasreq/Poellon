@@ -45,7 +45,7 @@ Route::post('profile.update', 'ProfileController@edit')->middleware('auth')->nam
 //recettes
 
 Route::get('recette', function () {
-    return view('recettes.recette');
+    return view('recettes.show');
 });
 Route::get('recette/create', function () {
     return view('recettes.create');
