@@ -138,6 +138,7 @@
                 <br/>
                 <img class="circular--square" style="width:150px; height:150px" src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width: 10em">
                 <br/>
+                
                 <form method="POST" action="{{ route('profile.update') }}">
                     @csrf
 
@@ -159,12 +160,6 @@
                         <label for="inputDescription">Description</label>
                         <br/>
                         <input type="text" class="form-control" id="Description" placeholder="description" name="description">
-                    </div>
-                    <div class="form-group">
-                        <label for="avatar">Image</label>
-                        <div class="col-md-6">
-                            <input id="avatar" type="file" class="form-control" name="avatar">
-                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

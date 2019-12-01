@@ -137,6 +137,8 @@
                 <div class="links">
                     <img class="circular--square" style="width:150px; height:150px" src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width: 10em">
                     <br/>
+                    <a class="btn btn-primary" href="http://homestead.test/profile/update" role="button">Changez votre photo</a>
+                    <br/>
                     <b>Mon profil</b>
                         <h2 style="color:chocolate">{{ Auth::user()->pseudo }} </h2>
                     <hr/>

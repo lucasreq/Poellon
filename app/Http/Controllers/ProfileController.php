@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Auth;
+use PhpOption\None;
 
 class ProfileController extends Controller
 {
@@ -68,9 +69,18 @@ class ProfileController extends Controller
      * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profile $profile)
+    public function edit(Request $request)
     {
-        //
+        if($request->hasFile('avatar')){
+            $avatar = $request->file('avatar');
+            $path = '/uploads/avatars/';
+            $filename = time(). '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->save(public_path($path . $filename));
+            $request->user()->avatar = $filename;
+            $request->user()->save();
+        };
+
+        return redirect()->route('profile.show');
     }
 
     /**
@@ -82,33 +92,19 @@ class ProfileController extends Controller
      */
     public function update(Request $request){
         // Logic for user upload of avatar
-        $user = Auth::user();
-//
-        $user->pseudo = $request->pseudo;
-//
-        $user->genre = $request->genre;
-//
-        $user->description = $request->description;
-//
 
-        if ($request->has('avatar')) {
-            // Get image file
-            $image = $request->file('avatar');
-            // Make a image name based on user name and current timestamp
-            $name = $request->input('pseudo').'_'.time();
-            // Define folder path
-            $folder = '/uploads/avatars/';
-            // Make a file path where image will be stored [ folder path + file name + file extension]
-            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
-            // Upload image
-            $this->uploadOne($image, $folder, 'public', $name);
-            // Set user profile image path in database to filePath
-            $user->avatar = $filePath;
-        }
-        
+        $user = Auth::user();
+    //
+        $user->pseudo = $request->pseudo;
+    //
+        $user->genre = $request->genre;
+    //
+        $user->description = $request->description;
+
         $user->save();
 
         return view('profile.show', ['user' => Auth::user()] );
+
     }
 
 

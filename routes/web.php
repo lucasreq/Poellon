@@ -29,12 +29,18 @@ Route::get('profile/edit', function (){
     return view('profile.edit');
 });
 
+Route::get('profile/update', function(){
+    return view('profile.update');
+});
+
 
 // profiles
 
 Route::get('profile', 'ProfileController@show')->middleware('auth')->name('profile.show');
 
 Route::post('profile.edit', 'ProfileController@update')->middleware('auth')->name('profile.update');
+
+Route::post('profile.update', 'ProfileController@edit')->middleware('auth')->name('profile.edit');
 
 //recettes
 

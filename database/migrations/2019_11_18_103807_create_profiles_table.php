@@ -17,6 +17,7 @@ class CreateProfilesTable extends Migration
             $table->bigIncrements('id');
             $table->string('Pseudo')->unique();
             $table->enum('Genre', ['masculin', 'feminin', 'autre']);
+            $table->file('avatar');
             $table->mediumText('Description');
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
