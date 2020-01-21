@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -42,6 +44,7 @@ Route::post('profile.edit', 'ProfileController@update')->middleware('auth')->nam
 
 Route::post('profile.update', 'ProfileController@edit')->middleware('auth')->name('profile.edit');
 
+
 //recettes
 
 Route::get('recette', function () {
@@ -56,3 +59,12 @@ Route::get('recette/delete', function () {
 Route::get('recette/edit', function () {
     return view('recettes.edit');
 });
+
+Route::prefix('admin')->group(function(){
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login.submit');
+    Route::get('/', "AdminController@index")->name('admin.dashboard');
+});
+
+
+
