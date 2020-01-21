@@ -7,7 +7,7 @@ keys:
     - ~/.ssh/id_rsa
 folders:
     -
-        map: /homstead/poellon
+        map: /home/lucas/Documents/TP/dev_web/homestead/Poellon
         to: /home/vagrant/code
 sites:
     -
