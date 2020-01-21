@@ -13,49 +13,50 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/"><img src="https://zupimages.net/up/19/47/rhfx.png" alt="logo" width="100em" height="50em"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="#">Top recettes</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Moi
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/home">Profil</a>
+                        <a class="dropdown-item" href="#">Historique</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" style="margin:auto">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <div class="flex-center position-ref full-height" style="margin-top: 1em">
+                    @if (Route::has('login'))
+                        <div class="top-right links">
+                            @auth
+                                <a href="{{ url('/home') }}">Home</a>
+                            @else
+                                <a href="{{ route('login') }}">Login</a>
 
-            <div class="d-flex justify-content-center">
-                <div class="title m-b-md">
-                    Creation de votre profil
-                <br/>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}">Register</a>
+                                @endif
+                            @endauth
+                        </div>
+                    @endif
                 </div>
-                <form method="POST" action="{{ route('profile.store', $Profile->$id) }}">
-                    <div class="form-group">
-                        <label for="inputPseudo">Pseudo</label>
-                        <br/>
-                        <input type="text" class="form-control" id="inputPseudo" aria-describedby="Pseudo" placeholder="Pseudo">
-                    </div>
-                    <div class="form-group">
-                        <label for="chooseyourgender">Genre</label>
-                        <br/>
-                        <select id="genre">
-                            <option value="masculin" selected>Masculin</option>
-                            <option value="feminin">Feminin</option>
-                            <option value="autre">Autre</option>
-                          </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputDescription">Description</label>
-                        <br/>
-                        <input type="text" class="form-control" id="inputDescription" placeholder="Description">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
             </div>
-        </div>
+        </nav>
+
+            <!-- sa maman -->
+
     </body>
 </html>

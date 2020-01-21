@@ -13,3 +13,5 @@ README.md
 server.php
 Vagrantfile
 webpack.mix.js
+node_modules
+
