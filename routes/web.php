@@ -66,6 +66,7 @@ Route::prefix('admin')->group(function(){
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', "AdminController@index")->name('admin.dashboard');
     Route::delete('users/{id}', 'AdminController@adminDeleteUser')->name('deleteUser');
+    Route::delete('recipes/{id}', 'AdminController@adminDeleteRecipe')->name('deleteRecipe');
 });
 
-Route::delete('recipes/{id}', 'Recepe@destroy')->name('deleteRecipe');
+

@@ -34,4 +34,10 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'User as been deleted');
 
     }
+    public function adminDeleteRecipe($id)
+    {
+        $recipes = Recipe::destroy($id);
+        return redirect()->route('admin.dashboard')->with('success', 'Recipe as been deleted');
+
+    }
 }

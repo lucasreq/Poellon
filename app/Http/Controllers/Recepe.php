@@ -233,7 +233,8 @@ class RecipeController extends Controller
             ->json([
                 'deleted' => true
             ]);
-    }
+
+
 }
 
 
