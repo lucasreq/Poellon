@@ -20,11 +20,11 @@ class AdminController extends Controller
         return view('admin')->with('users',$users);
     }
 
-    public function adminDeleteUser(Request $request, $id)
+    public function adminDeleteUser($id)
     {
 
         $users = User::destroy($id);
-        return view('admin')->with('success', 'User as been deleted');
+        return redirect()->route('admin.dashboard')->with('success', 'User as been deleted');
 
     }
 }

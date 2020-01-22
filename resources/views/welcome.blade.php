@@ -129,7 +129,7 @@
         </nav>
 
 
-    <div class="content" style="margin :auto; width: 75em; margin-top: 1em; background-color:beige;">
+    <div class="content" style="margin :auto; width: 75%; margin-top: 1em; background-color:beige;">
         <!-- jumbotron -->
         <div class="jumbotron" style="background-image:url('https://xtratheme.com/restaurant/wp-content/uploads/sites/14/2018/01/pb2-1.jpg'); backgroud-">
             <h1 class="display-4" style="color: white">Trouver une recette !</h1>
