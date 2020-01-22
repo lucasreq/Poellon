@@ -68,3 +68,4 @@ Route::prefix('admin')->group(function(){
     Route::delete('users/{id}', 'AdminController@adminDeleteUser')->name('deleteUser');
 });
 
+Route::delete('recipes/{id}', 'Recepe@destroy')->name('deleteRecipe');

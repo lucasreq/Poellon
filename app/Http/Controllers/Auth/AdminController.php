@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Recipe;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -17,7 +18,13 @@ class AdminController extends Controller
 
     public function index(){
         $users = User::all();
-        return view('admin')->with('users',$users);
+        $recipes = Recipe::all();
+        return view('admin')
+        ->with('users',$users)
+        ->with('recipes',$recipes);
+
+
+        //return view('admin')->with('recipes'->$recipes);
     }
 
     public function adminDeleteUser($id)
