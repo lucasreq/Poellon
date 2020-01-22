@@ -199,6 +199,16 @@
 
 
         </div>
+        <footer class="page-footer font-small blue">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+              <a href="admin/login"> admin access </a>
+            </div>
+            <!-- Copyright -->
+
+          </footer>
+
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

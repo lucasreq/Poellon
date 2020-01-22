@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -14,6 +16,15 @@ class AdminController extends Controller
     }
 
     public function index(){
-        return view('admin');
+        $users = User::all();
+        return view('admin')->with('users',$users);
+    }
+
+    public function adminDeleteUser(Request $request, $id)
+    {
+
+        $users = User::destroy($id);
+        return view('admin')->with('success', 'User as been deleted');
+
     }
 }

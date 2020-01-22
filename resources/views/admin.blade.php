@@ -1,4 +1,4 @@
-@extends('layouts.add')
+@extends('layouts.app')
 
 @section('content')
 <div class='container'>
@@ -9,9 +9,39 @@
 
                 <div class="panel-body">
                     Welcome <strong> ADMIN </strong> !
+
                 </div>
+
+
             </div>
         </div>
     </div>
+
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Pseudo</th>
+            <th scope="col">Email</th>
+            <th scope="col">DELETE</th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach ($users as $row)
+            <tr>
+                <td>{{ $row->id }}</td>
+                <td>{{ $row->pseudo }}</td>
+                <td>{{ $row->email }}</td>
+            <td>
+            <form action="{{ route('deleteUser', $row->id) }}" method="POST">
+                @csrf
+                {{ method_field('DELETE') }}
+                <button type="submit" class="btn btn-danger">DELETE</button>
+            </form>
+            </td>
+            </tr>
+            @endforeach
+        </tbody>
+      </table>
 </div>
 @endsection
