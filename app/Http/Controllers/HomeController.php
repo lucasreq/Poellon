@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\DB;
 
 class HomeController extends Controller
 {
@@ -25,4 +26,20 @@ class HomeController extends Controller
     {
         return view('home');
     }
-}
+
+    public function search(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output="";
+            $recipe=DB::table('recipes')->where('name','LIKE','%'.$request->search."%")->get();
+            if($recipe)
+            {
+                foreach ($recipe as $key => $recipes) {
+                    $output.='<tr>'.
+                    '<td>'.$recipes->id.'</td>'.
+                    '<td>'.$recipes->name.'</td>'.
+                    '<td>'.$recipes->description.'</td>'.
+                    '</tr>';
+        }
+    }

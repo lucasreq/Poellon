@@ -13,6 +13,9 @@
 
 //use Illuminate\Routing\Route;
 
+use App\Recipe;
+use Illuminate\Support\Facades\Input;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +26,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/search',function(){
+    $q = Input::get ( 'q' );
+    $user = Recipe::where('name','LIKE','%'.$q.'%')->get();
+    if(count($user) > 0)
+        return view('welcome')->withDetails($user)->withQuery ( $q );
+    else return view ('welcome')->withMessage('No Details found. Try to search again !');
+});
 /* Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'welcomeController@index'); */
 Route::get('/test' , 'testController@index')->name('test');

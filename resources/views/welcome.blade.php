@@ -135,11 +135,12 @@
             <h1 class="display-4" style="color: white">Trouver une recette !</h1>
             <p class="lead" style="color: white">Une idée pour impressioner vos proches ?</p>
             <hr class="my-4">
-            <form>
+            <form action="/search" method="POST" role="search">
+                {{ csrf_field() }}
                 <div class="container h-100">
                     <div class="d-flex justify-content-center h-100">
                         <div class="searchbar">
-                        <input class="search_input" type="text" name="" placeholder="Search...">
+                        <input class="search_input" type="text" name="q" placeholder="">
                         <button type="submit" style="background-color: grey;border: none;color: white;border-radius: 15%;"><img src="https://icon-library.net/images/zoom-icon/zoom-icon-1.jpg" width='30em'><i class="fas fa-search"></i></button>
                         </div>
                     </div>
