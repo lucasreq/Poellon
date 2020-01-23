@@ -149,55 +149,18 @@
         </div>
         <!-- CARD -->
         <div class="row" style="text-align:center; margin:auto; height:auto; padding: .5em .5em .5em .5em;">
-            <div class="col" >
+            @foreach ($recipes as $row)
+            <div class="col">
                 <div class="card" style="width: 20rem;">
-                    <img src="https://assets.afcdn.com/recipe/20150317/44332_w800h600c1cx233cy175.jpg" class="card-img-top" alt="...">
+                    <img src="https://www.canald.com/polopoly_fs/1.1394494.1393432534!/image/potoo.jpg_gen/derivatives/cd_796_449/potoo.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Paté de couille</h5>
-                        <p class="card-text">100 grs de champignons
-                                100 grs d'olive
-                                2 tomates
-                                1 oignon
-                                huile
-                                beurre
-                                3 gousses d'ail
-                                poivre noir
-                                sel </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">{{ $row->name }}</h5>
+                        <p class="card-text">{{ $row->description }}</p>
+                        <a href="#" class="btn btn-primary">Recette</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 20rem;">
-                <img src="https://www.canald.com/polopoly_fs/1.1394494.1393432534!/image/potoo.jpg_gen/derivatives/cd_796_449/potoo.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 20rem;">
-                <img src="https://www.chakipet.com/wp-content/uploads/animaux-drole-tete-3-569x640.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 20rem;">
-                <img src="http://www.maximumwall.com/wp-content/uploads/2015/09/fonds-ecran-animaux-droles-15.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-
+            @endforeach
 
         </div>
         <footer class="page-footer font-small blue">

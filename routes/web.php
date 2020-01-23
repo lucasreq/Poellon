@@ -14,10 +14,7 @@
 //use Illuminate\Routing\Route;
 
 
-Route::get('/', function () {
-    return view('welcome');
-
-});
+Route::get('/', 'welcomeController@index')->name('welcome');
 
 Auth::routes();
 
