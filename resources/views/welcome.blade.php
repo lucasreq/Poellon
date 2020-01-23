@@ -135,7 +135,7 @@
             <h1 class="display-4" style="color: white">Trouver une recette !</h1>
             <p class="lead" style="color: white">Une idée pour impressioner vos proches ?</p>
             <hr class="my-4">
-            <form action="/search" method="POST" role="search">
+            {{-- <form action="/search" method="POST" role="search">
                 {{ csrf_field() }}
                 <div class="container h-100">
                     <div class="d-flex justify-content-center h-100">
@@ -145,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            </form> --}}
         </div>
         <!-- CARD -->
         <div class="row" style="text-align:center; margin:auto; height:auto; padding: .5em .5em .5em .5em;">
